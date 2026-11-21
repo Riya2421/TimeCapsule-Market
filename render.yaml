@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: timecapsule-market
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: echo ok
+    startCommand: node --disable-warning=ExperimentalWarning src/index.js
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: TRUST_PROXY
+        value: "1"
